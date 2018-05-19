@@ -6,14 +6,12 @@ const API_KEY = 'AIzaSyDrn9xRv8sLcxUifWnmvWcEetQNTcDRrSA';
 
 
 
-class App extends React.Component {
-  render() {
+const App = () => {
     return (
       <div>
         <SearchBar />
       </div>
     );
-  }
 }
 
 ReactDOM.render(<App />, document.querySelector('.container'));
