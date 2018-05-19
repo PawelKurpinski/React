@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
-      <div>React simple starter WOW!!!!!
+      <div>
+        React simple starter WOW!!!!!
         <h1>Yes!!</h1>
         <p>I do love it! It's working!</p>
       </div>
@@ -12,4 +13,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementByClassName('container'));
+ReactDOM.render(<App />, document.querySelector('.container'));
