@@ -22,7 +22,7 @@ class SearchBar extends Component{
             // now we want to use state so:
             <div>
             <input
-            value = {this.state.term}
+            value = {this.state.term} /* we are actually updating user input when state changes */
             onChange = {event => this.setState({term: event.target.value})} /> 
             {/* The value of input is: {this.state.term} */}
             </div>    
