@@ -24,7 +24,8 @@ class SearchBar extends Component{
             <input
             value = {this.state.term} /* we are actually updating user input when state changes */
             onChange = {event => this.setState({term: event.target.value})} /> 
-            {/* The value of input is: {this.state.term}/* this looks strange but we want do is to get the value of the input from the page and update the state */}
+           {/*  The value of input is: {this.state.term} */} {/* it is just a test we do not need to log it */}
+             {/* this looks strange but we want do it to get the value of the input from the page and update the state */}
             </div>    
         )
     }
