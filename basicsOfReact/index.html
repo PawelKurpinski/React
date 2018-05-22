@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+     <script type="text/babel">
+
+     class Add extends React.Component{
+         constructor(props) {
+             super(props)
+             this.state = {
+                height: 100         
+             };
+         }
+         render(){
+             let {name, pic} = this.props; /* tahnks to this 'destructing "method"', I don't need to write "this.props" every single time below */
+             return(
+               <div>  
+                    <h1>Hello, world!</h1>
+                    <h2>My name is { /* this.props. */ name}. My big love i ReactJS</h2>
+                    <img src={ /* this.props. */ pic} height={this.state.height} />
+                    <br />
+                    <button onClick={this.zoomIn.bind(this)}>+</button>
+                    <button onClick={this.zoomOut.bind(this)}>-</button>
+                </div> 
+            )
+        }
+            zoomIn(){
+                this.setState({height: this.state.height + 100})
+            }    
+        
+            zoomOut(){
+                this.setState({height: this.state.height - 100})
+            }
+     }
+    
+
+      ReactDOM.render(
+        <Add name='Paweł' pic='http://www.tapeta-szczeniaczek-pudelko.na-pulpit.com/zdjecia/szczeniaczek-pudelko.jpeg'/>,
+        document.getElementById('root')
+      );
+
+    </script>
+  </body>
+</html>
