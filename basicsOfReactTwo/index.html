@@ -11,9 +11,28 @@
     <div id="root"></div>
      <script type="text/babel">
 
-        class One extends React.Component{
-            render(){
-                return 
+        class Add extends React.Component{
+            constructor(props) {
+                super(props)
+                this.state = {
+                    backgroundColor: 'red'
+                };
+            }
+            render() {
+                return(
+                   <div>
+                        <h1 style={{backgroundColor: (this.state.backgroundColor)}}>This is my page DUDE!!</h1>
+                        <h2>do not touch anything!!</h2>
+                        <button onClick={this.justGoForIt.bind(this)}>+</button>
+                        <button onClick={this.doNotGoForIt.bind(this)}>-</button>
+                   </div> 
+                )
+            }
+            justGoForIt(){
+                this.setState({fontSize: this.state.height + 10})
+            }
+            doNotGoForIt(){
+                this.setState({fontSize: this.state.fontSize - 10})
             }
         }
     
