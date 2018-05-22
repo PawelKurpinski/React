@@ -28,7 +28,7 @@ class SearchBar extends Component{
             <input
             value = {this.state.term} /* we are actually updating user input when state changes */
             onChange = {event => this.setState({term: event.target.value})} /> 
-           {/*  The value of input is: {this.state.term} */} {/* it is just a test we do not need to log it */}
+           {/*  The value of input is: {this.state.term} */}
              {/* this looks strange but we want do it to get the value of the input from the page and update the state.
             Here the key element is our input. It says our sate to update and rerender the page. \
             We are using here next an CONTROLED COMPONENT - form element;
