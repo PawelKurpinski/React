@@ -12,6 +12,17 @@
     <div id="root"></div>
      <script type="text/babel">
 
+      const colorArr = [
+        'red',
+        'blue',
+        'green',
+        'purple',
+        'cyan',
+        'brown',
+        'yellow',
+        'lightblue'
+      ];
+
        class HelloWorld extends React.Component{
          constructor(props){
            super(props)
@@ -20,6 +31,26 @@
              color: "hotpink"
            };
          }
+
+         /* this code below will automatically change both colors and names of them in the table */
+         
+         /* componentDidMount() {     
+           let colorPos = 0;
+           
+           setInterval(() => {
+             if(colorArr.length - 1 > colorPos){
+               this.setState({
+                 color: colorArr[colorPos]
+               });
+               colorPos++
+              } else {
+                this.setState({
+                  color: colorArr[colorPos]
+                });
+                colorPos = 0;
+              }
+          }, 700);
+        } */
 
            toggleColor() {
              if(this.state.color === "hotpink") {
