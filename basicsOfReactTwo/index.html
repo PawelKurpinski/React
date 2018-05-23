@@ -6,41 +6,33 @@
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="root"></div>
      <script type="text/babel">
 
-        class Add extends React.Component{
-            constructor(props) {
-                super(props)
-                this.state = {
-                    backgroundColor: 'red'
-                };
-            }
-            render() {
-                return(
-                   <div>
-                        <h1 style={{backgroundColor: (this.state.backgroundColor)}}>This is my page DUDE!!</h1>
-                        <h2>do not touch anything!!</h2>
-                        <button onClick={this.justGoForIt.bind(this)}>+</button>
-                        <button onClick={this.doNotGoForIt.bind(this)}>-</button>
-                   </div> 
-                )
-            }
-            justGoForIt(){
-                this.setState({fontSize: this.state.height + 10})
-            }
-            doNotGoForIt(){
-                this.setState({fontSize: this.state.fontSize - 10})
-            }
-        }
-    
+       class HelloWorld extends React.Component{
+           render(){
 
-      ReactDOM.render(
-        <Add />,
-        document.getElementById('root')
-      );
+            const styleObj = {
+              backgroundColor: 'lightgreen',
+              fontSize: 55/2
+            }
+
+             /* console.log(this.props.name) */
+               return (
+                  <section style={styleObj}
+                  id="hello-world">
+                   <h1>Hello World says {this.props.name}!</h1>
+                  </section>
+                )
+           }
+       }
+
+       ReactDOM.render(
+           < HelloWorld name='Paweł' />, document.getElementById('root')
+       )
 
     </script>
   </body>
