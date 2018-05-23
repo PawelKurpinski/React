@@ -7,14 +7,12 @@ A class base component can get props but functional comp not.   */
 class SearchBar extends Component{
     constructor(props){
         super(props)
-        this.state = { term: '' }; /* term is our name; we are initializing state - with empty string as it value for example "type sth" */
+        this.state = { term: '' }; /* term is our name; we are initializing state - with empty string as it value for example "type sth" State is ALWAYS an OBJECT! */
     }
     // render(){
-    //     return(
-    //     <input onChange = {this.onInputChange} />
-    //     )
+    //     return(<input onChange = {this.onInputChange} />)
     // }
-    // onInputChange(event){  /* event and onInput...are my names */
+    // onInputChange(event){  /* event and onInput...are my names BUT NOT onChange!! */
     //     return(
     //         console.log(event.target.value)
     //     )
@@ -22,20 +20,19 @@ class SearchBar extends Component{
 
     render(){
         return(
-           // <input onChange = {event => console.log(event.target.value)} /> 
-            // now we want to use state so:
             <div>
             <input
             value = {this.state.term} /* we are actually updating user input when state changes */
             onChange = {event => this.setState({term: event.target.value})} /> 
-           {/*  The value of input is: {this.state.term} */}
-             {/* this looks strange but we want do it to get the value of the input from the page and update the state.
-            Here the key element is our input. It says our sate to update and rerender the page. \
-            We are using here next an CONTROLED COMPONENT - form element;
-            The value of the input is equal to the state */}
             </div>    
         )
     }
 };
 
 export default SearchBar
+
+    {/*  The value of input is: {this.state.term} */}
+    {/* this looks strange but we want do it to get the value of the input from the page and update the state.
+    Here the key element is our input. It says our sate to update and rerender the page. \
+    We are using here next an CONTROLED COMPONENT - form element;
+    The value of the input is equal to the state */}
