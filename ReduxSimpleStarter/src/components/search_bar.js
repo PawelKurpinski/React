@@ -22,7 +22,9 @@ class SearchBar extends Component{
         return(
             <div>
             <input
-            value = {this.state.term} /* we are actually updating user input when state changes */
+            value = {this.state.term} /* we are actually updating user input when state changes this is a controlled field!
+            It's value is set by the STATE; VALUE makes the component a controlled input. So input is changing, "it tells to state Hey you need to change, its rerendering and the NEW STATE value BECOMES a real new STATE "start" value after rerendering SO FINALLY it becomes A REAL NEW VALUE of the input. SO:
+            Actually change the input value they only triggered any EVENT.*/
             onChange = {event => this.setState({term: event.target.value})} /> 
             </div>     /* so EVENT is an object combined with event handlers. It contains also info about VALUE of the input. We get access to it with event.target.value */
         )
