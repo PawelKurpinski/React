@@ -7,7 +7,7 @@ A class base component can get props but functional comp not.   */
 class SearchBar extends Component{
     constructor(props){
         super(props)
-        this.state = { term: '' }; /* term is our name; we are initializing state - with empty string as it value for example "type sth" State is ALWAYS an OBJECT! */
+        this.state = { term: 'Starting value' }; /* term is our name; we are initializing state - with empty string as it value for example "type sth" State is ALWAYS an OBJECT! */
     }
     // render(){
     //     return(<input onChange = {this.onInputChange} />)
