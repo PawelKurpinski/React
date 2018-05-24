@@ -24,7 +24,7 @@ class SearchBar extends Component{
             <input
             value = {this.state.term} /* we are actually updating user input when state changes */
             onChange = {event => this.setState({term: event.target.value})} /> 
-            </div>    
+            </div>     /* so EVENT is an object combined with event handlers. It contains also info about VALUE of the input. We get access to it with event.target.value */
         )
     }
 };
@@ -36,3 +36,6 @@ export default SearchBar
     Here the key element is our input. It says our sate to update and rerender the page. \
     We are using here next an CONTROLED COMPONENT - form element;
     The value of the input is equal to the state */}
+
+
+
