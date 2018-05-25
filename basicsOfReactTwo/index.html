@@ -13,7 +13,7 @@
      <script type="text/babel">
 
       const colorArr = [
-        'red',
+        'green',
         'blue',
         'green',
         'purple',
@@ -28,7 +28,7 @@
            super(props)
 
            this.state = {
-             color: "hotpink"
+             color: "green"
            };
          }
 
@@ -53,13 +53,13 @@
         } */
 
            toggleColor() {
-             if(this.state.color === "hotpink") {
+             if(this.state.color === "green") {
               this.setState({
                color: 'yellow'
              });
             } else {
               this.setState({
-                color: 'hotpink'
+                color: 'green'
               })
             }
           }
@@ -81,8 +81,11 @@
                return (
                   <section style={styleObj}
                   id="hello-world">
-                   <h1>Hello World says {this.props.name}!</h1>
-                   <h2 onClick={this.toggleColor.bind(this)}>{this.state.color}</h2>
+                   
+                  <h1>Hello World and {this.props.name}!</h1>
+                   
+                   <h4 onClick={this.toggleColor.bind(this)}>My favourite color is: {this.state.color}</h4>
+
                    <input value={this.state.color} onChange={this.changeColor.bind(this)}/>
                   </section>
                 );
