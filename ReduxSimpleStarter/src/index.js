@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import SearchBar from './components/search_bar';
 import YTSearch from 'youtube-api-search';
 import VideoList from './components/video_list';
+import VideoDetail from './components/video_detail';
 
 const API_KEY = 'AIzaSyDrn9xRv8sLcxUifWnmvWcEetQNTcDRrSA';
 
@@ -22,10 +23,12 @@ class App extends Component {
             return(
             <div>
             <SearchBar />
-            <VideoList videos={this.state.videos} /> {/* app is the parent of VideoList we do it with state but here we pass it as PROPS! */}
+            <VideoDetail video={this.state.videos[0]}/>
+            <VideoList videos={this.state.videos} /> 
+            {/* app is the parent of VideoList we do it with state but here we pass it as PROPS! */}
             </div>
         );
     }    
-};        
+}       
 
 ReactDOM.render(<App />, document.querySelector('.container'));
