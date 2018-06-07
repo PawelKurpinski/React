@@ -26,7 +26,6 @@
        class HelloWorld extends React.Component{
          constructor(props){
            super(props)
-
            this.state = {
              color: "green"
            };
@@ -82,9 +81,14 @@
                   <section style={styleObj}
                   id="hello-world">
                    
-                  <h1>Hello World and {this.props.name}!</h1>
+                  <h1>Hello! I'm {this.props.name}!</h1>
+                  
+                  <h2>Wellcome do my colors!</h2>
+                
                    
                    <h4 onClick={this.toggleColor.bind(this)}>My favourite color is: {this.state.color}</h4>
+
+                     <h2>What is yours!</h2>
 
                    <input value={this.state.color} onChange={this.changeColor.bind(this)}/>
                   </section>
