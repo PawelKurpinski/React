@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Countdown from "./Countdown";
+import Header from './Header/Header'
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Countdown />
+        <Header />
       </div>
     );
   }
