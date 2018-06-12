@@ -1,14 +1,12 @@
-import React, {Component} from 'react';
+// eslint-disable-next-line
+import React, { Component } from "react";
 
-class Footer extends Component{
-    render(){
+const Footer = () => {
         return(
             <div className="app">
                 Footer!!
             </div>
         )
-
-    }
 }
 
 export default Footer;
