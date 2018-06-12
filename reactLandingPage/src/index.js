@@ -1,9 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import './App.js'
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
 
-class App extends Component {
-
-}       
-
-ReactDOM.render(<App />, document.querySelector('.container'));
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
