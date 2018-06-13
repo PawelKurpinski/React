@@ -8,7 +8,7 @@ class App extends Component {
   } */
   state = {
     persons: [
-      {name: 'Max' , age: 29},
+      {name: 'Max' , age: 27},
       {name: 'Adam', age: 34},
       {name: 'Wojtek', age: 22}
     ]
@@ -32,7 +32,7 @@ class App extends Component {
         <Person name="Paweł" age='38' />
         <Person name="Peter" age={this.state.age} />
         <Person name="John">Ciekawostka!</Person>
-        <Person name={this.state.persons[2].name}/>
+        <Person name={this.state.persons[2].name} click={this.switchNameHandler}/>
         {/* Warning! this.withNameHandler() will be executed immediately but we do not wont it! */}
         <button onClick={this.switchNameHandler}>Click me!!</button>
       </div>
