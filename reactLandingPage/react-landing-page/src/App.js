@@ -13,6 +13,7 @@ class App extends Component {
       {name: 'Wojtek', age: 22}
     ]
   }
+  
   /* this below is my name but its good to write it with "handler" to emphasize it relation with an event */
 
   switchNameHandler = () => {
