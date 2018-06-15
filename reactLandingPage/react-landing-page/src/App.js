@@ -13,7 +13,7 @@ class App extends Component {
       {name: 'Wojtek', age: 22}
     ]
   }
-  
+
   /* this below is my name but its good to write it with "handler" to emphasize it relation with an event */
 
   switchNameHandler = () => {
@@ -34,6 +34,13 @@ class App extends Component {
   }
 
   render() {
+    const style = {
+      backgroudColor: 'white',
+      border: '1px solid blue',
+      font: 'inherit',
+      padding: '8px'
+    };
+
     return (
      
      <div className="App">
