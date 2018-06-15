@@ -9,5 +9,5 @@ export default StyleSheet.create({
     'padding': [{ 'unit': 'px', 'value': 16 }, { 'unit': 'px', 'value': 16 }, { 'unit': 'px', 'value': 16 }, { 'unit': 'px', 'value': 16 }],
     'textAlign': 'center'
   },
-  // Warning! ;) Css is GLOBAL! we have to imort it!
+  // Warning! ;) Css is GLOBAL! we have to import it!
 });
