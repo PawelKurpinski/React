@@ -8,5 +8,6 @@ export default StyleSheet.create({
     'boxShadow': [{ 'unit': 'px', 'value': 0 }, { 'unit': 'px', 'value': 2 }, { 'unit': 'px', 'value': 3 }, { 'unit': 'string', 'value': '#ccc' }],
     'padding': [{ 'unit': 'px', 'value': 16 }, { 'unit': 'px', 'value': 16 }, { 'unit': 'px', 'value': 16 }, { 'unit': 'px', 'value': 16 }],
     'textAlign': 'center'
-  }
+  },
+  // Warning! ;) Css is GLOBAL! we have to imort it!
 });

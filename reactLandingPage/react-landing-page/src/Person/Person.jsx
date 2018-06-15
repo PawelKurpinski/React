@@ -3,7 +3,7 @@ import './Person.css';
 
 const person = (props) => {
     return (
-        <div className="Perso">
+        <div className="Person">
             <p onClick={props.click}>This is my new Person {props.name} Is he is {props.age}! His age is {Math.floor(Math.random()*30)}</p> 
             <p>{props.children}</p>
             <input type="text" onChange={props.changed} value={props.name} />
