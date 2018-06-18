@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./App.css";
 import UserInput from "./UserInput";
 import UserOutput from "./UserOutput";
 
@@ -14,16 +13,7 @@ class App extends Component {
   };
 
   render() {
-    const style = {
-      backgroudColor: "white",
-      border: "1px solid blue",
-      font: "inherit",
-      padding: "8px",
-      borderRadius: "5px",
-      cursor: "pointer"
-    };
-
-    const outputStyle = {
+       const outputStyle = {
       backgroudColor: "green",
       color: "red",
       border: "3px solid green",
@@ -31,8 +21,9 @@ class App extends Component {
     };
 
     return (
-      <div style={style} className="App">
-        <UserInput name={this.state.userName} change={this.userNameHandler} />
+      <div className="App">
+        <UserInput currentName={this.state.userName} change={this.userNameHandler} />
+        
         <UserOutput
           style={outputStyle}
           name={this.state.userName}
