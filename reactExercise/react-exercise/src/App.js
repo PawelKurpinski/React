@@ -14,7 +14,7 @@ class App extends Component {
   };
 
   render() {
-    const inputStyle = {
+    const style = {
       backgroudColor: "white",
       border: "1px solid blue",
       font: "inherit",
@@ -31,7 +31,7 @@ class App extends Component {
     };
 
     return (
-      <div style={inputStyle} className="App">
+      <div style={style} className="App">
         <UserInput name={this.state.userName} change={this.userNameHandler} />
         <UserOutput
           style={outputStyle}
