@@ -39,10 +39,10 @@ class App extends Component {
   };
     /* with arrow fuction keyword "this" always refers to class! */
   togglePersonsHandler = () => {
-    const doesShow = this.state.showPersons;  /* showPersons: !showPersons will not work so we are adding a new const doesShow */
+    const doesShow = this.state.showPersons;  /* showPersons: !showPersons will not work so we are adding a new const doesShow*/
     this.setState({
-      showPersons: !doesShow
-  })
+      showPersons: !doesShow /*  It sets boolean to true when its false and false when it's true BUT! this will not affact with change of the other state elements - only showPerson */
+    })
   }
 
   render() {
@@ -59,7 +59,7 @@ class App extends Component {
       <div className="App">
         <h1>Hi I'm a React App!</h1>
 
-        <button style={buttonStyle} /* onClick={this.switchNameHandler} */
+        <button style={buttonStyle} /* onClick={this.switchNameHandler} we srarted with it but we want to change it */
           onClick={this.togglePersonsHandler}>
           Click to show or hyde!
         </button>
