@@ -320,7 +320,7 @@ class App extends Component {
               return <Person
               click={this.deletePersonHandler.bind(this, index)}  /* We have click event listener in the component - Person */
               name={person.name}
-              age={person.age}/>
+              age={person.age} key={index}/>
               })
             }
         </div>
