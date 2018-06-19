@@ -288,9 +288,9 @@ class App extends Component {
   nameChangeHandler = event => {
     this.setState({
       persons: [
-        { name: "Maximilian", age: 29 },
-        { name: "Jasio", age: 34 },
-        { name: event.target.value, age: 22 }
+        { id: 'a', name: "Maximilian", age: 29 },
+        { id: 'b', name: "Jasio", age: 34 },
+        { id: 'c', name: event.target.value, age: 22 }
       ]
     });
   };
@@ -320,7 +320,8 @@ class App extends Component {
               return <Person
               click={this.deletePersonHandler.bind(this, index)}  /* We have click event listener in the component - Person */
               name={person.name}
-              age={person.age} key={index}/>
+              age={person.age} 
+              key={person.id}/>
               })
             }
         </div>
