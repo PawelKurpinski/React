@@ -175,6 +175,92 @@
 
 /* ----------------------------------------------------------------------------------------------------------------------------------- */
 
+// import React, { Component } from "react";
+// import "./App.css";
+// import Person from './Person/Person';
+
+// class App extends Component {
+//   /*  state = {
+//     age: 40 
+//   } */
+//   state = {
+//     persons: [
+//       { name: "Max", age: 27 },
+//       { name: "Adam", age: 34 },
+//       { name: "Wojtek", age: 22 }
+//     ],
+//     showPersons: false
+//   };
+
+  /* this switch below is my name but its good to write it with "handler" to emphasize it relation with an event */
+
+//   switchNameHandler = () => {
+//     /* alert('I was clicked!'); */
+//     this.setState({
+//       persons: [
+//         { name: "Maximilian", age: 29 },
+//         { name: "Edek", age: 34 },
+//         { name: "Kazik!!!!", age: 22 }
+//       ]
+//     });
+//   };
+
+//   nameChangeHandler = event => {
+//     this.setState({
+//       persons: [
+//         { name: "Maximilian", age: 29 },
+//         { name: "Jasio", age: 34 },
+//         { name: event.target.value, age: 22 }
+//       ]
+//     });
+//   };
+    
+//   togglePersonsHandler = () => {
+//     const doesShow = this.state.showPersons;  
+//     this.setState({ showPersons: !doesShow }); /* here we ajust the state (here boolean value) so if it's true toggle it to false and vice versa */
+//   }
+
+//   render() {
+//     const buttonStyle = {
+//       backgroudColor: "white",
+//       border: "1px solid blue",
+//       font: "inherit",
+//       padding: "8px",
+//       borderRadius: "5px",
+//       cursor: "pointer"
+//     };  
+//     /* rendering doesn't mean retutning! so here we can write 'wanila JS' */
+
+//     let persons = null;
+
+//     if(this.state.showPersons /* === true */){
+//       persons = (
+//         <div> 
+//             {this.state.persons.map((person,index) => { /* person here is not persons!! it could be tomato */
+//               return <Person
+//               name={person.name}
+//               age={person.age}/>
+//               })
+//             }
+//         </div>
+//       );
+//     }
+
+//     return (
+//       <div className="App">
+//         <h1>Hi I'm a React App!</h1>
+//         <button style={buttonStyle} 
+//           onClick={this.togglePersonsHandler}>
+//           Click to show or hyde!</button> 
+//         {persons}
+//       </div>       
+//     );
+//   }
+// }
+// export default App;
+
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
+
 import React, { Component } from "react";
 import "./App.css";
 import Person from './Person/Person';
@@ -192,18 +278,11 @@ class App extends Component {
     showPersons: false
   };
 
-  /* this switch below is my name but its good to write it with "handler" to emphasize it relation with an event */
-
-  switchNameHandler = () => {
-    /* alert('I was clicked!'); */
-    this.setState({
-      persons: [
-        { name: "Maximilian", age: 29 },
-        { name: "Edek", age: 34 },
-        { name: "Kazik!!!!", age: 22 }
-      ]
-    });
-  };
+  deletePersonHandler = (personIndex) => {
+    const newPersons = this.state.persons;
+    newPersons.splice(personIndex, 1);  /* this removes one element from the array */
+    this.setState({persons: newPersons});
+  }
 
   nameChangeHandler = event => {
     this.setState({
@@ -238,8 +317,9 @@ class App extends Component {
         <div> 
             {this.state.persons.map((person,index) => { /* person here is not persons!! it could be tomato */
               return <Person
+              click={this.deletePersonHandler.bind(this, index)}  /* We have click event listener in the component - Person */
               name={person.name}
-              age={person.age} key={index} />
+              age={person.age}/>
               })
             }
         </div>
@@ -258,4 +338,3 @@ class App extends Component {
   }
 }
 export default App;
-
