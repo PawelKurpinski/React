@@ -11,7 +11,8 @@ class App extends Component {
       { name: "Max", age: 27 },
       { name: "Adam", age: 34 },
       { name: "Wojtek", age: 22 }
-    ]
+    ],
+    showPersons: false
   };
 
   /* this below is my name but its good to write it with "handler" to emphasize it relation with an event */
@@ -36,6 +37,13 @@ class App extends Component {
       ]
     });
   };
+    /* with arrow fuction keyword "this" always refers to class! */
+  togglePersonsHandler = () => {
+    const doesShow = this.state.showPersons;  /* showPersons: !showPersons will not work so we are adding a new const doesShow */
+    this.setState({
+      showPersons: !doesShow
+  })
+  }
 
   render() {
     const buttonStyle = {
@@ -51,25 +59,24 @@ class App extends Component {
       <div className="App">
         <h1>Hi I'm a React App!</h1>
 
-        <button style={buttonStyle} onClick={this.switchNameHandler}>
-          Click me!!
+        <button style={buttonStyle} /* onClick={this.switchNameHandler} */
+          onClick={this.togglePersonsHandler}>
+          Click to show or hyde!
         </button>
-
-        <Person name="Paweł" age="38" />
-
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-        />
-
-        <Person name="John">Ciekawostka!</Person>
-
-        <Person
-          name={this.state.persons[2].name}
-          click={this.switchNameHandler.bind(this, "Max!")}
-          changed={this.nameChangeHandler}
-        />
-
+        {
+          this.state.showPersons ?  /* this is a short "if statement" whitch means: "if showPersons === true ReactcreateElement() which works behind the scenes   or  do nothing=render nothing (null). The "traditional" if will not work here. Attention! this is pure JS in fact (ok looking like jsx) thats why we use {} here. In state we set showPersons on false so it a boolien */
+        <div> 
+            <Person name="Paweł" age="38" />
+            <Person
+              name={this.state.persons[0].name}
+              age={this.state.persons[0].age}/>
+            <Person name="John">Ciekawostka!</Person>
+            <Person
+              name={this.state.persons[2].name}
+              click={this.switchNameHandler.bind(this, "Max!")}
+              changed={this.nameChangeHandler}/>
+        </div> : null
+        }
         {/* Warning! this.withNameHandler() will be executed immediately but we do not wont it! */}
       </div>
     );
