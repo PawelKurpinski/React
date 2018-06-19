@@ -127,9 +127,9 @@ class App extends Component {
     
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;  
-    this.setState({ showPersons: !doesShow })
+    this.setState({ showPersons: !doesShow }); /* here we ajust the state (here boolean value) so if it's true toggle it to false and vice versa */
   }
-  
+
   render() {
     const buttonStyle = {
       backgroudColor: "white",
