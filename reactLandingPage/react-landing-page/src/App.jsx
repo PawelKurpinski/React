@@ -286,7 +286,8 @@ class App extends Component {
   
     /* Attention! here SLICE makes a COPY of our STATE with is a good practise!! 
   Another option is: const newPersons = [...this.state.persons] It uses SPRED operator */
-  /* splice removes one element from the array */
+  /* SPLICE removes one element from the array because we want finaly remove only one clicked element; 
+  personIndex shows which clicked element should be removoed from the DOM */
 
   nameChangeHandler = event => {
     this.setState({
@@ -300,7 +301,8 @@ class App extends Component {
     
   togglePersonsHandler = () => {
     const doesShow = this.state.showPersons;  
-    this.setState({ showPersons: !doesShow }); /* here we ajust the state (here boolean value) so if it's true toggle it to false and vice versa */
+    this.setState({ showPersons: !doesShow }); 
+    /* here we ajust the state (here boolean value) so if it's true toggle it to false and vice versa */
   }
 
   render() {
@@ -311,15 +313,15 @@ class App extends Component {
       padding: "8px",
       borderRadius: "5px",
       cursor: "pointer"
-    };  
-    /* rendering doesn't mean retutning! so here we can write 'wanila JS' */
+    };   
+    /* rendering doesn't mean returning! so here we can write 'wanila JS' */
 
     let persons = null;
 
     if(this.state.showPersons /* === true */){
       persons = (
         <div> 
-            {this.state.persons.map((person,index) => { /* person here is not persons!! it could be tomato */
+            {this.state.persons.map((person,index) => { 
               return <Person
               click={this.deletePersonHandler.bind(this, index)}  /* We have click event listener in the component - Person */
               name={person.name}
@@ -330,6 +332,8 @@ class App extends Component {
         </div>
       );
     }
+        /* person here is not persons!! it could be tomato. 
+            To return below dynamically a list of person elements based on the array of objects "persons" - instead of copying and pasting them three times as <Person ....../> we use map method */
 
     return (
       <div className="App">
@@ -337,7 +341,7 @@ class App extends Component {
         <button style={buttonStyle} 
           onClick={this.togglePersonsHandler}>
           Click to show or hyde!</button> 
-        {persons}
+          {persons}
       </div>       
     );
   }
