@@ -279,11 +279,14 @@ class App extends Component {
   };
 
   deletePersonHandler = (personIndex) => {
-    const newPersons = this.state.persons.slice();  /* Attention! here SLICE makes a COPY of our STATE with is a good practise!! 
-    Another option is this: const newPersons = [...this.state.persons] It uses SPRED operator */
-    newPersons.splice(personIndex, 1);  /* this removes one element from the array */
+    const newPersons = this.state.persons.slice();  
+    newPersons.splice(personIndex, 1);  
     this.setState({persons: newPersons});
-  }
+    } 
+  
+    /* Attention! here SLICE makes a COPY of our STATE with is a good practise!! 
+  Another option is: const newPersons = [...this.state.persons] It uses SPRED operator */
+  /* splice removes one element from the array */
 
   nameChangeHandler = event => {
     this.setState({
